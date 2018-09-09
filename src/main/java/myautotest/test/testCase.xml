@@ -7,6 +7,22 @@
 			<class name="explore.TestFactory" />
 			<class name="explore.TestHelloWorld" />
 			<class name="explore.TestCheckedException" />
+			<class name="explore.TestGroup" />
+		</classes>
+	</test>
+	
+	<!-- 只会执行在class的范围中 定义了 group的 且为  Selenium-test 的测试 -->
+	<test name="Selenium">
+		<groups>
+			<run>
+				<include name="selenium-test" />
+				<include name="mysql" />
+			</run>
+			
+		</groups>
+		<classes>
+			<class name="explore.TestSelenium" />
+			<class name="explore.TestGroup" />
 		</classes>
 	</test>
 

@@ -1,4 +1,4 @@
-package explore;
+package testng.annotation;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -19,7 +19,7 @@ public class TestHelloWorld {
 //  这个标签用于如果超时就算是失败
   @Test(timeOut = 3000) // time in mulliseconds
   public void testThisShouldPass() throws InterruptedException {
-      Thread.sleep(4000);
+      Thread.sleep(2000);
   }
   @Test(expectedExceptions = ArithmeticException.class)
   public void divisionWithException() {

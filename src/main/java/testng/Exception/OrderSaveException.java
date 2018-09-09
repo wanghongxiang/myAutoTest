@@ -1,6 +1,6 @@
-package explore;
+package testng.Exception;
 
-public class OrderNotFoundException extends RuntimeException {
+public class OrderSaveException extends RuntimeException {
 	 
     /**
      * 错误编码
@@ -18,7 +18,7 @@ public class OrderNotFoundException extends RuntimeException {
      * @param message
      *            信息描述
      */
-    public OrderNotFoundException(String message)
+    public OrderSaveException(String message)
     {
         super(message);
     }
@@ -31,7 +31,7 @@ public class OrderNotFoundException extends RuntimeException {
      * @param message
      *            信息描述
      */
-    public OrderNotFoundException(String errorCode, String message)
+    public OrderSaveException(String errorCode, String message)
     {
         this(errorCode, message, true);
     }
@@ -44,7 +44,7 @@ public class OrderNotFoundException extends RuntimeException {
      * @param message
      *            信息描述
      */
-    public OrderNotFoundException(String errorCode, String message, Throwable cause)
+    public OrderSaveException(String errorCode, String message, Throwable cause)
     {
         this(errorCode, message, cause, true);
     }
@@ -59,7 +59,7 @@ public class OrderNotFoundException extends RuntimeException {
      * @param propertiesKey
      *            消息是否为属性文件中的Key
      */
-    public OrderNotFoundException(String errorCode, String message, boolean propertiesKey)
+    public OrderSaveException(String errorCode, String message, boolean propertiesKey)
     {
         super(message);
         this.setErrorCode(errorCode);
@@ -74,7 +74,7 @@ public class OrderNotFoundException extends RuntimeException {
      * @param message
      *            信息描述
      */
-    public OrderNotFoundException(String errorCode, String message, Throwable cause, boolean propertiesKey)
+    public OrderSaveException(String errorCode, String message, Throwable cause, boolean propertiesKey)
     {
         super(message, cause);
         this.setErrorCode(errorCode);
@@ -89,7 +89,7 @@ public class OrderNotFoundException extends RuntimeException {
      * @param cause
      *            根异常类（可以存入任何异常）
      */
-    public OrderNotFoundException(String message, Throwable cause)
+    public OrderSaveException(String message, Throwable cause)
     {
         super(message, cause);
     }

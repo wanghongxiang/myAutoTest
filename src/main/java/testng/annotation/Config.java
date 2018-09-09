@@ -1,4 +1,4 @@
-package explore;
+package testng.annotation;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;

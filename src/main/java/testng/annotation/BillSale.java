@@ -1,4 +1,4 @@
-package explore;
+package testng.annotation;
 
 public class BillSale {
 	private long billid;

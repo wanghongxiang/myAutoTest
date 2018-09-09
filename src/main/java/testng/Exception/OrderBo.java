@@ -1,6 +1,6 @@
-package explore;
+package testng.Exception;
 
-import explore.Order;
+import testng.Exception.Order;
 
 public class OrderBo {
 	 
