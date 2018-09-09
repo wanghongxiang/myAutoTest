@@ -5,13 +5,26 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestHelloWorld {
-  @Test
+	
+//	使用在如果一段代码没有，准备好，可以下 设置为 没有就绪，执行的时候忽略他
+  @Test(enabled = false)
   public void testEmailGenerator() {
 	  RandomEmailGenerator obj = new RandomEmailGenerator();
       String email = obj.generate();
-
+      System.out.println("testEmailGenerator: " + email);
       Assert.assertNotNull(email);
       Assert.assertEquals(email, "feedback@yiibai.com");	
+  }
+  
+//  这个标签用于如果超时就算是失败
+  @Test(timeOut = 3000) // time in mulliseconds
+  public void testThisShouldPass() throws InterruptedException {
+      Thread.sleep(4000);
+  }
+  @Test(expectedExceptions = ArithmeticException.class)
+  public void divisionWithException() {
+      int i = 1 / 0;
+      System.out.println("After division the value of i is :"+ i);
   }
   
   @DataProvider(name="TestCase")
@@ -31,8 +44,8 @@ public class TestHelloWorld {
           {billSale5}
 	  };
   }
-//  这个方法很重要，能够搞定多数据测试的情况
-//  注意注解中的方法要完全一致
+
+  
   @Test(dataProvider="TestCase")
   public void printBillSale (BillSale billSale){
 	  System.out.println(billSale.getBillid() + " === " + billSale.getBillNo());
