@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--  parallel 就是并行的意思  -->
+<suite name="TestALl" parallel="classes" thread-count="2">
+	<test name="test1">
+		<classes>
+			<class name="testng.moreThread.ParallelClassesTestOne" />
+			<class name="testng.moreThread.ParallelClassesTestTwo" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--  parallel 就是并行的意思  -->
+<suite name="TestALl" parallel="classes" thread-count="2">
+	<test name="test1">
+	<!-- 注意用包名模糊匹配能够很大程度上减少配置，且结果也是一样 -->
+		<packages>
+            <package name="testng.moreThread.*" />
+        </packages>
+	</test>
+</suite>
