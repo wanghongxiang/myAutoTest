@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestALl">
+	<test name="test1">
+		<classes>
+			<class name="testng.group.TestGroup" />
+		</classes>
+	</test>
+	
+	<!-- 只会执行在class的范围中 定义了 group的 且为  Selenium-test 的测试 -->
+	<test name="Selenium">
+		<groups>
+			<run>
+				<include name="selenium-test" />
+				<include name="mysql" />
+			</run>
+			
+		</groups>
+		<classes>
+			<class name="testng.group.TestSelenium" />
+			<class name="testng.group.TestGroup" />
+		</classes>
+	</test>
+
+</suite>
