@@ -3,7 +3,8 @@ package testng.moreThread;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+//,dependsOnGroups = { "ParallelClassesTestOne" }
+@Test(groups = "ParallelClassesTestTwo",dependsOnGroups = { "ParallelClassesTestOne" })
 public class ParallelClassesTestTwo {
 
     @BeforeClass
@@ -12,16 +13,16 @@ public class ParallelClassesTestTwo {
         System.out.println("ParallelClassesTestTwo Before test-class. Thread id is: " + id);
     }
  
-    @Test
+    @Test(priority = 1,invocationCount = 3)
     public void testMethodOne() {
         long id = Thread.currentThread().getId();
-        System.out.println("ParallelClassesTestTwo Sample test-method One. Thread id is: " + id);
+        System.out.println("Classes 2 testMethod 1. Thread id is: " + id);
     }
  
-    @Test
+    @Test(priority = 1,invocationCount = 3)
     public void testMethodTwo() {
         long id = Thread.currentThread().getId();
-        System.out.println("ParallelClassesTestTwo Sample test-method Two. Thread id is: " + id);
+        System.out.println("Classes 2 testMethod 2. Thread id is: " + id);
     }
  
     @AfterClass

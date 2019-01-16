@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite"  parallel="tests" thread-count="2">
+	<test verbose="2" preserve-order="true" name="test9651">  
+		<classes>
+			<class name="testng.moreThread.ParallelClassesTest1" >
+				<methods>
+	              <include name="testMethodOne_001" />
+	              <include name="testMethodOne_002" />
+	              <include name="testMethodOne_003" />
+	              <include name="testMethodOne_004" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test verbose="2" preserve-order="true" name="test965">  
+		<classes>
+			<class name="testng.moreThread.ParallelClassesTest2" />
+		</classes>
+	</test>
+</suite>
